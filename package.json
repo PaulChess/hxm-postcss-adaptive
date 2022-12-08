@@ -1,0 +1,48 @@
+{
+  "name": "hxm-postcss-adaptive",
+  "version": "0.1.0",
+  "description": "A postcss plugin that calculates and generates adaptive css code, such as rem and 0.5px borders for retina devices",
+  "main": "index.js",
+  "author": "shenjiaqi <sjq15251852316@163.com>",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:PaulChess/hxm-postcss-adaptive.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "postcss",
+    "rem",
+    "hairline"
+  ],
+  "scripts": {
+    "test:babel": "babel src --out-dir lib",
+    "test:babel-watch": "babel src --watch --out-dir lib",
+    "test:lint": "eslint src",
+    "test:mocha": "mocha",
+    "test": "npm run test:babel && npm run test:lint && npm run test:mocha",
+    "cover": "isparta cover --report text --report lcov _mocha -- --reporter dot"
+  },
+  "dependencies": {
+    "css": "^2.2.1",
+    "postcss": "^6.0.8"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-object-assign": "^6.8.0",
+    "babel-preset-es2015": "^6.9.0",
+    "chai": "^3.5.0",
+    "eslint": "^3.5.0",
+    "isparta": "~4.0.0",
+    "mocha": "^3.0.2"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ],
+    "plugins": [
+      "transform-object-assign"
+    ]
+  }
+}
