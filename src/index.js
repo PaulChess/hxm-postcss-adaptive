@@ -19,7 +19,7 @@ export default postcss.plugin(pkg.name, (options) => {
       css.walkRules((rule) => {
         // 对于每一个规则，遍历它的每一个声明
         rule.walkDecls((decl) => {
-          // 如果声明的值使用了 rem 单位，则将其转换成原来的两倍
+          // 如果声明的值使用了 rem 单位，则将其转换成需要的比例倍数
           if (decl.value.includes('rem')) {
             decl.value = decl.value.replace(/\d*\.?\d*rem/g, (match) => {
               return parseFloat(match) * ratio + 'rem'
