@@ -1,6 +1,6 @@
 {
   "name": "hxm-postcss-adaptive",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A postcss plugin that calculates and generates adaptive css code, such as rem and 0.5px borders for retina devices",
   "main": "index.js",
   "author": "shenjiaqi <sjq15251852316@163.com>",

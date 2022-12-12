@@ -10,7 +10,9 @@ Config:
 
 * `type`：转换类型
   * `remToRem`：`rem` 单位之间的比例互转
-* `ratio`: 提供 `rem` 单位之间的转换比例
+  * `remToPx`： `rem` 单位转成 `px`
+* `ratio`: `rem` 单位之间的转换比例。（当 `type` 为 `remToRem` 时需要提供该参数）
+* `rootValue`：`rem` 与 `px` 的转换基准值。例如：`0.36rem` <=> `18px`，`rootValue` 的值为 `50`。（当 `type` 为 `remToPx` 时需提供该参数）
 
 #### Vue-Cli
 新建 `.postcssrc.json`，配置如下：
@@ -47,6 +49,10 @@ Config:
 ### 0.1.0
 
 * First release.
+
+### 0.2.0
+
+* 增加 `remToPx` 的类型及 `rootValue` 配置项.
 
 ## License
 

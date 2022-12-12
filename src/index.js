@@ -28,5 +28,18 @@ export default postcss.plugin(pkg.name, (options) => {
         })
       })
     }
+    if (options.type === 'remToPx') {
+      // 例如 18px <=> 0.36rem，这里的 rootValue 就是 50
+      const rootValue = options.rootValue
+      css.walkRules((rule) => {
+        rule.walkDecls((desl) => {
+          if (desl.value.includes('rem')) {
+            desl.value = desl.value.replace(/\d*\.?\d*rem/g, (match) => {
+              return parseInt(parseFloat(match) * rootValue, 10) + 'px'
+            })
+          }
+        })
+      })
+    }
   }
 })
